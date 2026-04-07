@@ -10,7 +10,7 @@ def thread_A():
     kunci1.acquire() # thread A mengambil kunci 1
     print("Thread A sukses mengambil kunci 1")
 
-    time.sleep(1)
+    time.sleep(1) # simulasi waktu berjalan
 
     # thread A mencoba untuk mengambil kunci 2
     print("Mencoba untuk mengambil kunci 2")
@@ -40,12 +40,12 @@ def thread_B():
     kunci2.release()
 
 
-t1 = threading.Thread(target=thread_A)
-t2 = threading.Thread(target=thread_B)
+t1 = threading.Thread(target=thread_A) # membuat thread baru untuk menjalankan thread_A
+t2 = threading.Thread(target=thread_B) # membuat thread baru untuk menjalankan thread_B
 
-t1.start()
-t2.start()
+t1.start() # memulai thread_A
+t2.start() # memulai thread_B
 
-t1.join()
-t2.join()
+t1.join() # menunggu thread_A selesai
+t2.join() # menunggu thread_B selesai
 
