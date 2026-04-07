@@ -48,4 +48,3 @@ t2.start() # memulai thread_B
 
 t1.join() # menunggu thread_A selesai
 t2.join() # menunggu thread_B selesai
-
